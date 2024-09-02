@@ -1,7 +1,17 @@
 {
-  "extends": "next/core-web-vitals",
   "rules": {
     "react-hooks/exhaustive-deps": "off",
     "react/display-name": "off"
-  }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12, // 최신 ECMAScript 버전을 사용할 수 있도록 설정
+    "sourceType": "module" // ECMAScript 모듈을 사용하기 위해 'module'로 설정
+  },
+  "plugins": [
+    "react",
+    "react-hooks"
+  ]
 }
