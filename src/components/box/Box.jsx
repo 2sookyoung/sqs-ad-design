@@ -1,16 +1,12 @@
-import styled from "@emotion/styled";
-import React from "react";
-import PropTypes from "prop-types";
-import { color } from "@styles/values/color";
-import { typography } from "@styles/values/typography";
+import styled from '@emotion/styled';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { color } from '@styles/values/color';
+import { typo } from '@styles/values/typography';
 
-const Box = ({ children, type = "default", backgroundColor, ...props }) => {
+const Box = ({ children, type = 'default', ...props }) => {
   return (
-    <BoxContainer
-      type={type}
-      style={backgroundColor && { backgroundColor }}
-      {...props}
-    >
+    <BoxContainer type={type} {...props}>
       {children}
     </BoxContainer>
   );
@@ -24,7 +20,7 @@ Box.propTypes = {
 };
 
 Box.defaultProps = {
-  type: "default",
+  type: 'default',
 };
 
 export default Box;
@@ -33,16 +29,17 @@ export const BoxContainer = styled.div`
   width: 100%;
   max-width: -webkit-fill-available;
   background-color: ${({ type }) =>
-    type === "warning"
-      ? color.system.error.red["000"]
+    type === 'warning'
+      ? color.system.error.red['000']
       : color.grayscale.gray[100]};
-  padding: ${({ type }) => (type === "warning" ? "12px 20px" : "12px")};
+  padding: ${({ type }) => (type === 'warning' ? '12px 20px' : '12px')};
   border-radius: 6px;
 
-  p {
-    ${typography.sub[12]}
+  p,
+  span {
+    ${typo.sub[12]}
     color:${({ type }) =>
-      type === "warning"
+      type === 'warning'
         ? color.system.error.red[300]
         : color.grayscale.gray[700]};
   }
