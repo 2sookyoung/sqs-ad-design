@@ -13,6 +13,8 @@ import { SearchIcon } from '@components/icon/common/Search'
 import { color } from '@styles/values/color'
 import PropTypes from 'prop-types'
 
+//https://mui.com/material-ui/react-text-field/ 커스텀변경예정
+
 const Input = ({
   type = 'text',
   control,
