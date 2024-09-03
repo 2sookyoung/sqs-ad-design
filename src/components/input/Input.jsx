@@ -11,6 +11,7 @@ import {
 } from '@utils/stringRule'
 import { SearchIcon } from '@components/icon/common/Search'
 import { color } from '@styles/values/color'
+import PropTypes from 'prop-types'
 
 const Input = ({
   type = 'text',
@@ -115,6 +116,21 @@ const Input = ({
       }}
     />
   )
+}
+Input.propTypes = {
+  /**
+   * 필수입력 표시여부
+   */
+  required: PropTypes.boolean,
+  /**
+   * 인풋 플레이스홀더에 들어갈 텍스트
+   */
+  placeholder: PropTypes.string,
+}
+
+Input.defaultProps = {
+  required: false,
+  placeholder: '사업자등록번호를 입력하세요. (ex: 100-23-45678)',
 }
 
 export default Input

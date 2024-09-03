@@ -166,3 +166,9 @@ export const AUTH_FORM_ERROR = {
     validation: '텍스트가 올바르지 않습니다.',
   },
 }
+
+export const numberWithCommas = x => {
+  return String(x)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+}

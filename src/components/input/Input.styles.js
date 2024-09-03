@@ -218,10 +218,10 @@ export const PlusButton = styled(MinusButton)`
 
 export const Suffix = styled.span`
   position: absolute;
-  top: ${({ top }) => top || '6px'};
+  top: ${({ top }) => top || '7px'};
   right: 9px;
   width: 12px;
-  height: 22px;
+  /* height: 22px; */
   color: ${color.grayscale.gray[500]};
   ${typo.sub[12]};
 `
@@ -280,6 +280,8 @@ export const CopyInputIconContainer = styled(FlexColumn)`
 export const UploadInputContainer = styled(FlexRow)`
   justify-content: flex-start;
   width: ${({ width }) => width || '100%'};
+  gap: 0;
+  box-sizing: border-box;
 `
 
 export const UploadInputBox = styled.input`
@@ -304,6 +306,7 @@ export const UploadInputBox = styled.input`
 `
 
 export const UploadIconContainer = styled.div`
+  box-sizing: border-box;
   position: relative;
   display: flex;
   justify-content: center;
@@ -402,4 +405,16 @@ export const TagInput = styled(InputBox)`
   &:focus {
     outline: none;
   }
+`
+
+export const LabelTitle = styled.label`
+  color: #666666;
+  ${typo.body[14]}
+`
+export const LabelDesc = styled.p`
+  color: #666666;
+  ${typo.sub[12]}
+`
+export const InputRequired = styled.span`
+  color: red;
 `

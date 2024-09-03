@@ -2,8 +2,7 @@ import { UploadIcon } from '@components/icon/common/Upload'
 import { color } from '@styles/values/color'
 import * as SC from './Input.styles'
 import * as TextSC from '@components/typography/Typography.styles'
-
-// import Loading from '../layout/Loading'
+import Loading from '@components/loading/Loading'
 
 const FileUploadInput = ({ value, onClick, error, width, isLoading = false }) => {
   return (
@@ -14,8 +13,7 @@ const FileUploadInput = ({ value, onClick, error, width, isLoading = false }) =>
 
       <SC.UploadIconContainer onClick={() => (isLoading ? null : onClick())} error={error}>
         {isLoading ? (
-          // <Loading size={16} leftPosition="40%" delay={false} />
-          <p>로딩</p>
+          <Loading size={16} leftPosition="40%" delay={false} />
         ) : (
           <>
             <UploadIcon />
