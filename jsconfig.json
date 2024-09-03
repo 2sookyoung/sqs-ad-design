@@ -16,6 +16,9 @@
       ],
       "@params/*": [
         "params/*"
+      ],
+      "@hooks/*": [
+        "hooks/*"
       ]
     }
   },
