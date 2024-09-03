@@ -121,6 +121,17 @@ const Input = ({
 }
 Input.propTypes = {
   /**
+   * 인풋 타입에 따라 Rule 변경
+   */
+  type:
+    PropTypes.email |
+    PropTypes.phone |
+    PropTypes.telePhone |
+    PropTypes.businessNumber |
+    PropTypes.name |
+    PropTypes.url |
+    PropTypes.text,
+  /**
    * 필수입력 표시여부
    */
   required: PropTypes.boolean,
@@ -131,6 +142,7 @@ Input.propTypes = {
 }
 
 Input.defaultProps = {
+  type: 'text',
   required: false,
   placeholder: '사업자등록번호를 입력하세요. (ex: 100-23-45678)',
 }

@@ -44,7 +44,7 @@ const ALLOW_FILE_TYPE = [
 ]
 
 export default {
-  title: 'Common/Input',
+  title: 'Renewal/Input',
   component: Input,
   tags: ['autodocs'],
   argTypes: {
@@ -332,7 +332,3 @@ export const inputLabel = args => {
 input.story = {
   name: 'Default',
 }
-
-// export const withForm = () => {
-//   return <Form />;
-// };
