@@ -1,5 +1,7 @@
-import { createTheme } from '@mui/material'
+import { createTheme, TextField } from '@mui/material'
 import { color } from '@styles/values/color'
+import styled from '@emotion/styled'
+import { typo } from '@styles/values/typography'
 
 export const textFieldTheme = createTheme({
   components: {
@@ -63,14 +65,52 @@ export const textFieldTheme = createTheme({
         },
       },
     },
-    MuiInputLabel: {
-      styleOverrides: {
-        root: {
-          '&.Mui-error': {
-            color: color.system.error.red[300],
-          },
-        },
-      },
-    },
+    // MuiInputLabel: {
+    //   styleOverrides: {
+    //     root: {
+    //       '&.Mui-error': {
+    //         color: color.system.error.red[300],
+    //       },
+    //     },
+    //   },
+    // },
   },
 })
+
+export const TextFieldContainer = styled(TextField)`
+  position: relative;
+  .Mui-error {
+    color: ${({ error }) => (error ? color.system.error.red[300] : 'blue')} !important;
+  }
+`
+
+export const Suffix = styled.span`
+  position: absolute;
+  top: ${({ top }) => top || '16px'};
+  right: 16px;
+  width: 12px;
+  height: 22px;
+  color: ${color.grayscale.gray[500]};
+  ${typo.sub[12]};
+`
+export const InputCount = styled(Suffix)`
+  width: fit-content;
+  ${typo.sub[12]};
+  color: #cccccc;
+`
+export const ErrorMessage = styled.span`
+  position: absolute;
+  bottom: -20px;
+  right: ${({ position }) => position && '0'};
+  ${({ customLocation }) => customLocation && customLocation};
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  width: max-content;
+
+  color: ${color.system.error.red[300]};
+  svg {
+    fill: ${color.system.error.red[300]};
+  }
+  ${typo.sub[12]};
+`

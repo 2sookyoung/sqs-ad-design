@@ -9,9 +9,17 @@ export default {
   component: TextfieldInput,
   tags: ['autodocs'],
   argTypes: {
+    type: {
+      control: 'select',
+      options: ['noRule', 'text', 'name', 'url'],
+    },
     required: { control: 'boolean' },
-    label: { control: 'text', description: 'input 라벨' },
-    placeholder: { control: 'text', description: 'input 플레이스홀더' },
+    isSearch: { control: 'boolean' },
+    useTextLength: { control: 'boolean' },
+    max: { control: { type: 'number', min: 1, max: 30, step: 1 } },
+    width: { control: 'text' },
+    label: { control: 'text' },
+    placeholder: { control: 'text' },
   },
 }
 const StorybookFormProvider = ({ children }) => {
@@ -26,9 +34,7 @@ const StorybookFormProvider = ({ children }) => {
     </FormProvider>
   )
 }
-const InputFormContext = args => {
-  const value = text('value', 'id')
-
+const InputFormContext = ({ args }) => {
   const {
     control,
     formState: { errors },
@@ -36,7 +42,18 @@ const InputFormContext = args => {
 
   return (
     <>
-      <TextfieldInput required={true} control={control} name={'id'} placeholder={args.placeholder} label={args.label} />
+      <TextfieldInput
+        control={control}
+        name={'name'}
+        required={args.required}
+        placeholder={args.placeholder}
+        label={args.label}
+        type={args.type}
+        isSearch={args.isSearch}
+        width={args.width}
+        useTextLength={args.useTextLength}
+        max={args.max}
+      />
     </>
   )
 }
