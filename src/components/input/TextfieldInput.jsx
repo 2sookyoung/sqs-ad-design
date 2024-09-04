@@ -157,7 +157,7 @@ TextfieldInput.defaultProps = {
   required: false,
   isSearch: false,
   useTextLength: false,
-  label: '레이블 필수',
+  label: '레이블 필수하',
   placeholder: '',
   max: '',
 }

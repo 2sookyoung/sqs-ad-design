@@ -8,6 +8,9 @@ export const textFieldTheme = createTheme({
     MuiTextField: {
       styleOverrides: {
         root: {
+          '& label': {
+            fontFamily: 'Pretendard',
+          },
           '& label.Mui-focused': {
             color: '#1c1f25',
             '&.Mui-error': {
@@ -34,6 +37,7 @@ export const textFieldTheme = createTheme({
     MuiFilledInput: {
       styleOverrides: {
         root: {
+          fontFamily: 'Pretendard',
           borderRadius: 4,
           border: '1px solid',
           borderColor: '#E0E3E7',
